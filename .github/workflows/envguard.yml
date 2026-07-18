@@ -18,7 +18,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - uses: bhargavmahanta/envGuard@v2
+      - uses: bhargavmahanta/envGuard@adoption-readiness
         with:
-          config: envguard.config.yml
+          config-path: envguard.config.yml
           fail-on: high
