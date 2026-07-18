@@ -1,0 +1,19 @@
+{
+  "name": "envguard-node-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal Node.js template protected by EnvGuard.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "security:env": "envguard scan . --ci --fail-on high"
+  },
+  "devDependencies": {
+    "@bhargavmahanta/envguard": "^2.0.0",
+    "@bhargavmahanta/envguard-config-node": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

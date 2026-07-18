@@ -1,0 +1,24 @@
+name: EnvGuard
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - uses: bhargavmahanta/envGuard@v2
+        with:
+          config: envguard.config.yml
+          fail-on: high
